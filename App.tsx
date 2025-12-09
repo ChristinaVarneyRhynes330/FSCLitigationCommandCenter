@@ -41,27 +41,29 @@ export default function App() {
   
   // Load state from localStorage
   const [state, setState] = useState<AppState>(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        // Use environment variable API key if available, otherwise use stored value
-        return {
-          ...parsed,
-          apiKey: import.meta.env.VITE_GEMINI_API_KEY || parsed.apiKey || ''
-        };
-      } catch (e) {
-        console.error('Failed to parse stored state:', e);
-      }
+  const stored = localStorage.getItem(STORAGE_KEY);
+  const envApiKey = typeof import.meta.env !== 'undefined' && import.meta.env.VITE_GEMINI_API_KEY 
+    ? import.meta.env.VITE_GEMINI_API_KEY 
+    : '';
+  
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      return {
+        ...parsed,
+        apiKey: envApiKey || parsed.apiKey || ''
+      };
+    } catch (e) {
+      console.error('Failed to parse stored state:', e);
     }
-    return {
-      apiKey: import.meta.env.VITE_GEMINI_API_KEY || '',
-      batesPrefix: 'PLTF',
-      batesCounter: 1,
-      evidence: []
-    };
-  });
-
+  }
+  return {
+    apiKey: envApiKey,
+    batesPrefix: 'PLTF',
+    batesCounter: 1,
+    evidence: []
+  };
+});
   // Save state to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
