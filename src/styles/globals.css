@@ -49,14 +49,28 @@
   --color-gold: #d4af37;
   --color-rose-gold: #b76e79;
   --color-champagne: #f7e7ce;
-  
+
+  /* Added: used by btn-primary */
+  --color-rose-600: #b76e79;
+
+  /* Base semantic colors */
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
   --color-info: #3b82f6;
 
+  /* Added shade variants used in badges/text utility classes */
+  --color-success-50: #ecfdf5;
+  --color-success-600: #059669;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-600: #d97706;
+
+  --color-error-50: #fef2f2;
+  --color-error-600: #dc2626;
+
   --bg-luxury-dark: #0f1117;
-  
+
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -67,9 +81,9 @@
   --elevation-2: 0 4px 12px rgba(0, 0, 0, 0.1);
   --elevation-3: 0 8px 24px rgba(0, 0, 0, 0.12);
   --elevation-4: 0 16px 48px rgba(0, 0, 0, 0.15);
-  
+
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  
+
   --spacing-section: 64px;
   --spacing-lg: 32px;
   --spacing-md: 24px;
