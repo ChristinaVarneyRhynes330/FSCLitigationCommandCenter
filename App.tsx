@@ -10,7 +10,8 @@ import { Finance } from "./components/Finance";
 import { LawLibrary } from "./components/LawLibrary";
 import { DiscoveryManager as Discovery } from "./components/DiscoveryManager";
 import { Binder } from "./components/Binder";
-import { Sidebar, SidebarProvider } from "./components/Sidebar";
+import { SidebarProvider } from "./components/Sidebar"; // ⬅ wrap here
+import { Sidebar } from "./components/Sidebar";
 import { Settings } from "./components/Settings";
 import { MobileNav } from "./components/MobileNav";
 import { callGemini, AI_PROMPTS } from "./utils/gemini";
@@ -68,7 +69,6 @@ export default function App() {
         console.error("Failed to parse stored state:", e);
       }
     }
-
     return {
       apiKey: envApiKey,
       batesPrefix: "PLTF",
