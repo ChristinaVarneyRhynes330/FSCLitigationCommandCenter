@@ -1,0 +1,28 @@
+```
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+build/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# OS files
+desktop.ini
+.DS_Store
+Thumbs.db
+
+# Lock files (optional - you can keep this if you want)
+package-lock.json
+
+# Old project folder
+litigation-command-center/
