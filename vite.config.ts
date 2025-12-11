@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
-import tailwindcss from '@tailwindcss/vite'; // Must be here
+import tailwindcss from '@tailwindcss/vite'; // <--- This import is missing
 import path from 'path';
 
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(), // Must be here
+    tailwindcss(), // <--- This plugin is missing
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
